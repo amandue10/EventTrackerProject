@@ -48,12 +48,7 @@ class TaskTest {
 		assertEquals("Go to store", task.getName());
 	}
 
-//	@Test
-//	void test_Category_one_to_many_mapping() {
-//		assertNotNull(task);
-//		assertNotNull(task.getName());
-//		assertTrue(task.getName().size()>0);
-//	}
+
 
 
 }

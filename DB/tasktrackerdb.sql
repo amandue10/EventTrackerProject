@@ -23,6 +23,14 @@ DROP TABLE IF EXISTS `task` ;
 CREATE TABLE IF NOT EXISTS `task` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(200) NULL,
+  `details` VARCHAR(1000) NULL,
+  `location` VARCHAR(200) NULL,
+  `date` DATE NULL,
+  `time` VARCHAR(45) NULL,
+  `category` VARCHAR(45) NULL,
+  `priority_level` VARCHAR(45) NULL,
+  `notes` VARCHAR(45) NULL,
+  `status` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -42,7 +50,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `tasktrackerdb`;
-INSERT INTO `task` (`id`, `name`) VALUES (1, 'Go to store');
+INSERT INTO `task` (`id`, `name`, `details`, `location`, `date`, `time`, `category`, `priority_level`, `notes`, `status`) VALUES (1, 'Go to store', 'List: Apples, Eggs, Milk', '1155 S. Havana Rd Aurora, CO 80247', '2021-12-12', '00:00:00', 'Shopping', 'Low', '20$ budget', 'Not complete');
 
 COMMIT;
 
