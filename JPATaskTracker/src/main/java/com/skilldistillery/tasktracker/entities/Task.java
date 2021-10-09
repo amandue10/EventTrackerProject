@@ -20,7 +20,7 @@ public class Task {
 	private String details;
 	private String location;
 	private Date date;
-	private Time time;
+	private String time;
 	private String category;
 	
 	@Column(name = "priority_level")
@@ -75,11 +75,11 @@ public class Task {
 		this.date = date;
 	}
 
-	public Time getTime() {
+	public String getTime() {
 		return time;
 	}
 
-	public void setTime(Time time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 

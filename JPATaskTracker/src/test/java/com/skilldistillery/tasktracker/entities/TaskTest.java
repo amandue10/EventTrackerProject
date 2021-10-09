@@ -43,9 +43,17 @@ class TaskTest {
 	}
 
 	@Test
-	void test_Category_entity_mapping() {
+	void test_Task_entity_mapping() {
 		assertNotNull(task);
 		assertEquals("Go to store", task.getName());
+		assertEquals("List: Apples, Eggs, Milk", task.getDetails());
+		assertEquals("1155 S. Havana Rd Aurora, CO 80247", task.getLocation());
+//		assertEquals(2021-12-12, task.getDate());
+		assertEquals("00:00:00", task.getTime());
+		assertEquals("Shopping", task.getCategory());
+		assertEquals("Low", task.getPriorityLevel());
+		assertEquals("20$ budget", task.getNotes());
+		assertEquals("Not complete", task.getStatus());
 	}
 
 
