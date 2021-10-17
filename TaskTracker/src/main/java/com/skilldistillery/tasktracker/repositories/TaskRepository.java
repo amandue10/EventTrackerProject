@@ -6,7 +6,7 @@ import com.skilldistillery.tasktracker.entities.Task;
 
 public interface TaskRepository extends JpaRepository<Task, Integer> {
 
-
+Task findByName(String t);
 
 
 
