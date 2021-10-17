@@ -42,7 +42,7 @@ public Task createTask(@RequestBody Task task) {
 		return taskSvc.update(taskId, task);
 	}
 	
-	@DeleteMapping("tasks")
+	@DeleteMapping("task")
 	public Boolean deleteTask(@PathVariable Integer taskId) {
 		return taskSvc.delete(taskId);
 	}
