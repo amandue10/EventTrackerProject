@@ -32,7 +32,7 @@ public class TaskController {
 		return taskSvc.show(taskId);
 	}
 	
-	@PostMapping("tasks")
+	@PostMapping("task")
 public Task createTask(@RequestBody Task task) {
 		return taskSvc.create(task);
 	}
