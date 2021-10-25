@@ -10,17 +10,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 public class Task {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int Id;
 	private String name;
 	private String details;
 	private String location;
-	private Date date;
-	private String time;
+	
+	@Column(name = "task_date")
+	private Date taskDate;
+	
+	@Column(name = "task_time")
+	private String taskTime;
+	
 	private String category;
 	
 	@Column(name = "priority_level")
@@ -34,16 +41,18 @@ public class Task {
 	}
 
 	// Getters and Setters
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 
 	public String getName() {
 		return name;
+	}
+
+	public int getId() {
+		return Id;
+	}
+
+	public void setId(int id) {
+		Id = id;
 	}
 
 	public void setName(String name) {
@@ -67,20 +76,20 @@ public class Task {
 		this.location = location;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getTaskDate() {
+		return taskDate;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setTaskDate(Date taskDate) {
+		this.taskDate = taskDate;
 	}
 
-	public String getTime() {
-		return time;
+	public String getTaskTime() {
+		return taskTime;
 	}
 
-	public void setTime(String time) {
-		this.time = time;
+	public void setTaskTime(String taskTime) {
+		this.taskTime = taskTime;
 	}
 
 	public String getCategory() {
@@ -115,10 +124,9 @@ public class Task {
 		this.status = status;
 	}
 
-	//hashcode and equals
 	@Override
 	public int hashCode() {
-		return Objects.hash(id);
+		return Objects.hash(Id);
 	}
 
 	@Override
@@ -130,14 +138,16 @@ public class Task {
 		if (getClass() != obj.getClass())
 			return false;
 		Task other = (Task) obj;
-		return id == other.id;
+		return Id == other.Id;
 	}
 
 	@Override
 	public String toString() {
-		return "Task [id=" + id + ", name=" + name + ", details=" + details + ", location=" + location + ", date="
-				+ date + ", time=" + time + ", category=" + category + ", priorityLevel=" + priorityLevel + ", notes="
-				+ notes + ", status=" + status + "]";
+		return "Task [Id=" + Id + ", name=" + name + ", details=" + details + ", location=" + location + ", taskDate="
+				+ taskDate + ", taskTime=" + taskTime + ", category=" + category + ", priorityLevel=" + priorityLevel
+				+ ", notes=" + notes + ", status=" + status + "]";
 	}
+
+	
 
 }

@@ -1,6 +1,7 @@
 window.addEventListener('load', function(e) {
 	console.log('script.js loaded')
 	init();
+	
 
 });
 
@@ -10,7 +11,8 @@ function init() {
 		var taskId = document.taskForm.taskId.value;
 		if (!isNaN(taskId) && taskId > 0) {
 			getTask(taskId);
-		}
+		};
+		
 	});
 	document.addTaskForm.addTask.addEventListener('click', function(event) {
 		event.preventDefault();
@@ -60,6 +62,9 @@ function init() {
 		}
 		xhr.send();
 	}
+
+
+
 
 	function displayTask(task) {
 		var dataDiv = document.getElementById('taskData');
@@ -123,4 +128,5 @@ function postNewTask(newTask) {
 	//button to delete tracker
 	//button to update, load tasks into form
 }
+
 
